@@ -1,7 +1,8 @@
 #include <iostream>
 
+#include "c.h"
+
 int main(void) {
-	std::cout << "Hello, World!" << std::endl;
+	funcC();
 	return 0;
 }
-

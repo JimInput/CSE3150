@@ -1,0 +1,9 @@
+#ifndef A_H
+#define A_H
+// Insert a.h code here
+#endif
+
+#pragma once
+// a.h contents
+
+

@@ -30,3 +30,8 @@ desktop.ini
 *.docx
 *.pyc
 !.gitignore
+*.o
+*.out
+env
+.pytest_cache
+*.swp
