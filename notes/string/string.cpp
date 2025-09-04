@@ -1,10 +1,7 @@
-#include <iostream>
+#include<iostream>
 #include <string>
 
-using std::cout;
-using std::cin;
-using std::string;
-using std::endl;
+using std::cout, std::cin, std::string,  std::endl;
 
 int main() {
 	cout << "Enter name: ";

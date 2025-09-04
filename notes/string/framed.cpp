@@ -3,7 +3,7 @@
 
 using std::cout, std::cin, std::endl, std::string;
 
-void printGreeting(string &name) {
+void printGreeting(string name) {
 	string msg = "Hello " + name + "!";
 	int len = msg.size();
 	string stars(len+4, '*');
