@@ -1,0 +1,30 @@
+char *names[5];
+names ia an array of char pointers
+
+int (*matrix)[10];
+matrix is a pointer to an array of ints
+
+char *(*fp)(int, float *);
+fp is a pointer to a function that takes in an int and float pointer which returns a char pointer.
+
+static_cast - converts between numeric types while protecting from overriding out of memory space
+int x = 50;
+char c = 'a';
+int* p = static_cast<int*>(&c); // bad (cant cast from char to int (different space in memory))
+
+double y = static_cast<double>(x); // good since they take up same space in memory
+
+const_cast - adds constness to a variable
+
+const int x = 50;
+int *p = const_cast<int*>(&x);
+*p = 20; // this errors because *p != x (undefined behavior)
+
+int x = 10;
+const int* p = const_cast<int*>(&x);
+x = 20; // this will work perfectly
+
+
+reinterpret_cast - C "like" conversion doesnt care for memory or anything
+dynamic_cast - converts between compatible classes (inheritance)
+

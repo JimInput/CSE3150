@@ -4,11 +4,11 @@
 #include "parser.h"
 
 int main(void) {
-    std::cerr << "Enter your full name: ";
+    std::cout << "Enter your full name: ";
     std::string fullName;
     std::getline(std::cin, fullName);
 
-    std::cerr << "Enter your email address: ";
+    std::cout << "Enter your email address: ";
     std::string email;
     std::cin >> email;
 

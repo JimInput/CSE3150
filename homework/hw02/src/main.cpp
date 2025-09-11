@@ -5,7 +5,7 @@
 
 int main(void) {
     std::string name;
-    std::cerr << "Please enter your name: "; // print to cerr so that user sees it but doesn't confuse pytest.
+    std::cout << "Please enter your name: "; // print to cerr so that user sees it but doesn't confuse pytest.
     std::getline(std::cin, name);
 
     const std::string greeting = GreetingUtils::create_message(name);
