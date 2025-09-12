@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <cstring>   // for strlen, strcpy
 
@@ -8,8 +7,12 @@ int NAME_BUFFER = 35; // a good length for a name
 
 // TODO: implement addStudent
 void addStudent(char* name, double gpa, char* names[], double gpas[], int& size, int& capacity) {
-    names[size] = name;
-    gpas[size++] = gpa;
+    if (size < capacity) {
+        names[size] = name;
+        gpas[size++] = gpa;
+    } else {
+        throw "List full.";
+    }
 }
 // TODO: implement updateGPA
 void updateGPA(double* gpaPtr, double newGpa) {
@@ -27,11 +30,11 @@ double averageGPA(const double gpas[], int size) {
         throw "No students.";
     }
 
-    int sum = 0;
+    double sum = 0;
     for (int i = 0; i < size; ++i) {
         sum += gpas[i];
     }
-    return static_cast<double>(sum) / size;
+    return sum / size;
 }
 
 int main(int argc, char* argv[]) {
@@ -66,10 +69,11 @@ int main(int argc, char* argv[]) {
                 std::cin >> name;
                 std::cout << "Please enter " << name << "\'s gpa: ";
                 std::cin >> gpa;
-                if (size < capacity) {
+                try {
                     addStudent(name, gpa, names, gpas, size, capacity);
-                } else {
-                    std::cout << "List full." << std::endl;
+                } catch (const char* msg) {
+                    std::cout << msg << std::endl;
+                    return 1;
                 }
                 break;
             }
@@ -99,9 +103,9 @@ int main(int argc, char* argv[]) {
                 // TODO: implement menu logic
                 try {
                     double average = averageGPA(gpas, size);
-                    std::cout << "Average GPA: " << average << std::endl;
+                    std::cout << "Average GPA: " << static_cast<int>(average) << std::endl;
                 } catch (const char* msg) {
-                    std::cout << "Something went wrong... " << msg << std::endl;
+                    std::cout <<  msg << std::endl;
                     return 1;
                 }
                 break;
