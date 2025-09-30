@@ -21,6 +21,7 @@ int main() {
     for (string x : vec) {
         cout << x << " ";
     }
+    vec.push_back("fuck");
     cout << endl;
     cout << sum(vec) << endl;
     return 0;
